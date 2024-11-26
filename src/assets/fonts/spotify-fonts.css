@@ -1,0 +1,237 @@
+body > div#spotify-fonts > h1:nth-of-type(1) {
+    font-family: "Gotham-Black";
+}
+
+body > div#spotify-fonts > p:nth-of-type(1) {
+    font-family: "Gotham-Black";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(2) {
+    font-family: "Gotham-Bold";
+}
+
+body > div#spotify-fonts > p:nth-of-type(2) {
+    font-family: "Gotham-Bold";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(3) {
+    font-family: "Gotham-BookItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(3) {
+    font-family: "Gotham-BookItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(4) {
+    font-family: "Gotham-Light";
+}
+
+body > div#spotify-fonts > p:nth-of-type(4) {
+    font-family: "Gotham-Light";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(5) {
+    font-family: "Gotham-Thin";
+}
+
+body > div#spotify-fonts > p:nth-of-type(5) {
+    font-family: "Gotham-Thin";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(6) {
+    font-family: "Gotham-ThinItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(6) {
+    font-family: "Gotham-ThinItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(7) {
+    font-family: "Gotham-UltraItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(7) {
+    font-family: "Gotham-UltraItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(8) {
+    font-family: "Gotham-XLight";
+}
+
+body > div#spotify-fonts > p:nth-of-type(8) {
+    font-family: "Gotham-XLight";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(9) {
+    font-family: "Gotham-XLightItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(9) {
+    font-family: "Gotham-XLightItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(10) {
+    font-family: "GothamBold";
+}
+
+body > div#spotify-fonts > p:nth-of-type(10) {
+    font-family: "GothamBold";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(11) {
+    font-family: "GothamBoldItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(11) {
+    font-family: "GothamBoldItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(12) {
+    font-family: "GothamBook";
+}
+
+body > div#spotify-fonts > p:nth-of-type(12) {
+    font-family: "GothamBook";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(13) {
+    font-family: "GothamBookItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(13) {
+    font-family: "GothamBookItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(14) {
+    font-family: "GothamLight";
+}
+
+body > div#spotify-fonts > p:nth-of-type(14) {
+    font-family: "GothamLight";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(15) {
+    font-family: "GothamLightItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(15) {
+    font-family: "GothamLightItalic";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(16) {
+    font-family: "GothamMedium";
+}
+
+body > div#spotify-fonts > p:nth-of-type(16) {
+    font-family: "GothamMedium";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(17) {
+    font-family: "GothamMedium_1";
+}
+
+body > div#spotify-fonts > p:nth-of-type(17) {
+    font-family: "GothamMedium_1";
+}
+
+body > div#spotify-fonts > h1:nth-of-type(18) {
+    font-family: "GothamMediumItalic";
+}
+
+body > div#spotify-fonts > p:nth-of-type(18) {
+    font-family: "GothamMediumItalic";
+}
+
+@font-face {
+    font-family: "Gotham-Black";
+    src: url("Gotham-Spotify-Font/Gotham-Black.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("Gotham-Spotify-Font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gotham-BookItalic";
+    src: url("Gotham-Spotify-Font/Gotham-BookItalic.otfLight");
+}
+
+@font-face {
+    font-family: "Gotham-Light";
+    src: url("Gotham-Spotify-Font/Gotham-Light.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Thin";
+    src: url("Gotham-Spotify-Font/Gotham-Thin.otf");
+}
+
+@font-face {
+    font-family: "Gotham-ThinItalic";
+    src: url("Gotham-Spotify-Font/Gotham-ThinItalic.otf");
+}
+
+@font-face {
+    font-family: "Gotham-XLight";
+    src: url("Gotham-Spotify-Font/Gotham-XLight.otf");
+}
+
+@font-face {
+    font-family: "Gotham-XLightItalic";
+    src: url("Gotham-Spotify-Font/Gotham-XLightItalic.otf");
+}
+
+@font-face {
+    font-family: "Gotham-UltraItalic";
+    src: url("Gotham-Spotify-Font/Gotham-UltraItalic.otf");
+}
+
+@font-face {
+    font-family: "GothamMediumItalic";
+    src: url("Gotham-Spotify-Font/GothamMediumItalic.ttf");
+}
+
+@font-face {
+    font-family: "GothamBold";
+    src: url("Gotham-Spotify-Font/GothamBold.ttf");
+}
+
+@font-face {
+    font-family: "GothamBoldItalic";
+    src: url("Gotham-Spotify-Font/GothamBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "GothamBook";
+    src: url("Gotham-Spotify-Font/GothamBook.ttf");
+}
+
+@font-face {
+    font-family: "GothamBookItalic";
+    src: url("Gotham-Spotify-Font/GothamBookItalic.ttf");
+}
+
+@font-face {
+    font-family: "GothamLight";
+    src: url("Gotham-Spotify-Font/GothamLight.ttf");
+}
+
+@font-face {
+    font-family: "GothamLightItalic";
+    src: url("Gotham-Spotify-Font/GothamLightItalic.ttf");
+}
+
+@font-face {
+    font-family: "GothamMedium";
+    src: url("Gotham-Spotify-Font/GothamMedium.ttf");
+}
+
+@font-face {
+    font-family: "GothamMedium_1";
+    src: url("Gotham-Spotify-Font/GothamMedium_1.ttf");
+}
+
+body > div#spotify-fonts {
+    height: fit-content;
+}
