@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState, useEffect } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { SongsContext } from "../../context/SongsContextProvider";
 import { IconContext } from "react-icons";
 import { RxTrackPrevious } from "react-icons/rx";
@@ -9,6 +9,7 @@ import { FiPlay } from "react-icons/fi";
 let audio1;
 let playIcon2;
 let setIsPlaying1;
+let song1
 
 export const handlePlay = () => {
   if (audio1.current.played.length > 0) {
@@ -43,12 +44,6 @@ const MediaMiddle = ({
   audio1 = audio;
   playIcon2 = playIconMobile;
   setIsPlaying1 = playerSetter;
-  console.log(song);
-  const isFirstRender = useRef(true);
-  console.log(isFirstRender.current);
-  if(isFirstRender.current){
-    console.log(audio.current, 'hey');
-  }
 
   let el = useRef();
   let songsContext = useContext(SongsContext);
@@ -118,13 +113,6 @@ const MediaMiddle = ({
     (audio.current.ontimeupdate = () => handleProgressBarUpdate());
   audio.current &&
     (audio.current.onended = () => handleProgressBarUpdate(true));
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      console.log("This is the first render!");
-      isFirstRender.current = false; // Mark that the first render has happened
-    }
-  });
 
   return (
     <IconContext.Provider value={{ className: "media-middle-icons" }}>

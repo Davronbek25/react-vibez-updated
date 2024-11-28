@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import NavbarSub from './NavbarSub'
+import SearchBarWeb from './SearchBarWeb'
 
 const NavBar = () => {
   const nav = useRef()
@@ -19,8 +20,7 @@ const NavBar = () => {
     <div className="container-fluid g-0 transparent-bg" ref={nav} id="nav">
         <div className="row d-flex justify-content-between w-100 align-items-center h-100">
             <div className="col braces">
-                <img src="./imgs/above-before (2).png" width={32} alt="" />
-                <img src="./imgs/above-next.png" width={32} alt="" />
+                <SearchBarWeb/>
             </div>
            <NavbarSub/>
         </div>
