@@ -60,19 +60,33 @@ html {
     background-color: #00000000;
 }
 
-.braces {
-    margin-left: 1.9rem;
+#searchBarWeb > input {
+    font-size: 14px;
+    font-weight: 500;
+    background: #181B22;
+    border: 0;
+    border-radius: 1em;
+    padding-bottom: 3px;
+    padding-left: 12px;
+    padding-right: 25px;
+    width: 179px;
+    height: 31px;
 }
 
-.braces>img {
-    margin-right: 1.1rem;
-    opacity: 0.6;
+#searchBarWeb > input:focus {
+    outline: none;
 }
 
-.braces>img:hover {
-    opacity: 1;
-    cursor: pointer;
+#searchBarWeb > input::placeholder {
+    color: #cacbce;
 }
+
+#searchBarWeb > .bi-search {
+    position: relative;
+    right: 24px;
+    top: 2px;
+    color: #cacbce;
+}   
 
 .dropdown-nav>a {
     width: 11.2rem;
