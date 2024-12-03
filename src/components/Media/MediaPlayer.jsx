@@ -29,6 +29,7 @@ const MediaPlayer = ({
     }
   } else {
     chosenSongs = songs.length > 1 ? songs[1][5] : "";
+    // audio.current && (audio.current.src = chosenSongs.preview);
   }
   return (
     <div className="play-media">

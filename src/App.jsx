@@ -70,6 +70,7 @@ function App() {
           pBMobile={pBMobile}
           bottomNavbar={bottomNavbar}
           playMobile={playMobile}
+          isPlaying={isPlaying}
         />
         <SideBar />
         <Main />

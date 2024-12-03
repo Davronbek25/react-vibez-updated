@@ -9,7 +9,6 @@ import { FiPlay } from "react-icons/fi";
 let audio1;
 let playIcon2;
 let setIsPlaying1;
-let song1
 
 export const handlePlay = () => {
   if (audio1.current.played.length > 0) {
@@ -25,8 +24,8 @@ export const handlePlay = () => {
   } else {
     setIsPlaying1();
     playIcon2.current.src = "./imgs/pause.png";
-    audio1.current.src = song.preview;
     audio1.current.play();
+    console.log(playIcon2.current.src)
   }
 };
 

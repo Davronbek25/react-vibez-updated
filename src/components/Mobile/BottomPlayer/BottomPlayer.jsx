@@ -3,7 +3,7 @@ import { SongsContext } from "../../../context/SongsContextProvider";
 import { average } from "color.js";
 import { handlePlay } from "../../Media/MediaMiddle";
 
-const BottomPlayer = ({ playIconMobile, audioMobile, pBMobile }) => {
+const BottomPlayer = ({ playIconMobile, audioMobile, pBMobile, isPlaying }) => {
   let songsContext = useContext(SongsContext);
   let bottomPlayerRow = useRef();
 

@@ -71,6 +71,7 @@ html {
     padding-right: 25px;
     width: 179px;
     height: 31px;
+    color: #cacbce;
 }
 
 #searchBarWeb > input:focus {
