@@ -6,7 +6,7 @@ import BottomPlayer from "../BottomPlayer/BottomPlayer";
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
 import SearchBar from "../SearchBar/SearchBar";
 
-const MobileMain = ({ playIconMobile, audioMobile, pBMobile, bottomNavbar, playMobile, isPlaying }) => {
+const MobileMain = ({ audioMobile, pBMobile, bottomNavbar, playMobile, isPlaying }) => {
   let songsContext = useContext(SongsContext);
   let songs = songsContext[0];
   return (
@@ -15,7 +15,6 @@ const MobileMain = ({ playIconMobile, audioMobile, pBMobile, bottomNavbar, playM
       {songs.length > 1 && <MobileCards songs={songs} />}
       <Footer />
       {playMobile && <BottomPlayer
-        playIconMobile={playIconMobile}
         audioMobile={audioMobile}
         pBMobile={pBMobile}
         isPlaying={isPlaying}

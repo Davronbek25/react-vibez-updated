@@ -7,25 +7,26 @@ import { FiPause } from "react-icons/fi";
 import { FiPlay } from "react-icons/fi";
 
 let audio1;
-let playIcon2;
 let setIsPlaying1;
+let song1
 
 export const handlePlay = () => {
   if (audio1.current.played.length > 0) {
     if (audio1.current.paused) {
-      setIsPlaying1();
-      playIcon2.current.src = "./imgs/pause.png";
+      setIsPlaying1(true);
       audio1.current.play();
     } else {
-      setIsPlaying1();
-      playIcon2.current.src = "./imgs/play.png";
+      setIsPlaying1(false);
       audio1.current.pause();
     }
   } else {
-    setIsPlaying1();
-    playIcon2.current.src = "./imgs/pause.png";
-    audio1.current.play();
-    console.log(playIcon2.current.src)
+    setIsPlaying1(true);
+    if(audio1.current && audio1.current.src.length < 1){
+      audio1.current.src = song1.preview;
+      audio1.current.play();
+    }else {
+      audio1.current.play();
+    }
   }
 };
 
@@ -34,15 +35,14 @@ const MediaMiddle = ({
   song,
   duration,
   currentTime,
-  playIconMobile,
   pBMobile,
   isPlaying,
   playerSetter,
 }) => {
   const [prevSongs, setPrevSongs] = useState([]);
   audio1 = audio;
-  playIcon2 = playIconMobile;
   setIsPlaying1 = playerSetter;
+  song1 = song;
 
   let el = useRef();
   let songsContext = useContext(SongsContext);
@@ -55,7 +55,6 @@ const MediaMiddle = ({
     } else {
       setPrevSongs((prev) => [...prev, song]);
     }
-    console.log(prevSongs);
     let random3 =
       Math.round(Math.random() * 3) !== undefined
         ? Math.round(Math.random() * 3)
@@ -86,10 +85,9 @@ const MediaMiddle = ({
       el.current.style.width = "0%";
       pBMobile.current.style.width = "0%";
       setIsPlaying1();
-      playIconMobile.current.src = "./imgs/play.png";
     } else {
       el.current.style.width = percentage.toString() + "%";
-      pBMobile.current.style.width = percentage.toString() + "%";
+      pBMobile.current && (pBMobile.current.style.width = percentage.toString() + "%");
     }
 
     let minutes = "0" + Math.floor(audio.current.currentTime / 60);

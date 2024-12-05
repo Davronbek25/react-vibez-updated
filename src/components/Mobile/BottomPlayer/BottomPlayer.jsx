@@ -3,7 +3,7 @@ import { SongsContext } from "../../../context/SongsContextProvider";
 import { average } from "color.js";
 import { handlePlay } from "../../Media/MediaMiddle";
 
-const BottomPlayer = ({ playIconMobile, audioMobile, pBMobile, isPlaying }) => {
+const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
   let songsContext = useContext(SongsContext);
   let bottomPlayerRow = useRef();
 
@@ -71,10 +71,9 @@ const BottomPlayer = ({ playIconMobile, audioMobile, pBMobile, isPlaying }) => {
             onClick={likeBtn}
           />
           <img
-            src="./imgs/play.png"
+            src={isPlaying ? "./imgs/pause.png" : "./imgs/play.png"}
             className="ms-auto"
             alt="play"
-            ref={playIconMobile}
             onClick={handlePlay}
           />
         </div>

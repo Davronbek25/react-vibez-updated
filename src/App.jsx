@@ -16,14 +16,12 @@ function App() {
   const currentTime = useRef();
   const duration = useRef();
   const audio = useRef();
-  const playIconMobile = useRef();
   const pBMobile = useRef();
   const audioMobile = useRef();
   const bottomNavbar = useRef()
 
   useEffect(() => {
     if(playMobile) {
-      playIconMobile.current && (playIconMobile.current.src = "./imgs/pause.png");
       bottomNavbar.current && (bottomNavbar.current.classList.remove("bottomNavbarShort"))
       bottomNavbar.current  && bottomNavbar.current.classList.add("bottomNavbarTall")
     }
@@ -37,7 +35,6 @@ function App() {
     ];
     let selectedSong = chosenSong.find((s) => s !== undefined);
     setIsPlaying(prev => true)
-    playIconMobile.current && (playIconMobile.current.src = "./imgs/pause.png");
     if (selectedSong) {
       setSong(selectedSong);
       audio.current.src = selectedSong.preview;
@@ -62,10 +59,11 @@ function App() {
       songs={res}
       songIdHandler={songIdHandler}
       songId={songId}
+      isPlaying={isPlaying}
+      playerSetter={playerSetter}
     >
       <div className="container-fluid main-container g-0 d-flex">
         <Mobile
-          playIconMobile={playIconMobile}
           audioMobile={audioMobile}
           pBMobile={pBMobile}
           bottomNavbar={bottomNavbar}
@@ -78,7 +76,6 @@ function App() {
           audio={audio}
           duration={duration}
           currentTime={currentTime}
-          playIconMobile={playIconMobile}
           audioMobile={audioMobile}
           pBMobile={pBMobile}
           isPlaying={isPlaying}

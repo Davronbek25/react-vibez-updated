@@ -38,8 +38,6 @@ const useFetch = ( reloader, responder, reload) => {
           reloader()
           console.log("wrong");
         } else {
-          console.log('success')
-          console.log(songs)
           responder(songs)
         }
       })

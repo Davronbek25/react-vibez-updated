@@ -8,7 +8,6 @@ const MediaPlayer = ({
   audio,
   duration,
   currentTime,
-  playIconMobile,
   audioMobile,
   pBMobile,
   isPlaying,
@@ -41,7 +40,6 @@ const MediaPlayer = ({
             song={chosenSongs}
             duration={duration}
             currentTime={currentTime}
-            playIconMobile={playIconMobile}
             audioMobile={audioMobile}
             pBMobile={pBMobile}
             isPlaying={isPlaying}

@@ -64,10 +64,10 @@ const MainContent = () => {
         <div className="list-cards container ms-2 mt-4">
             <div className="row pe-3">
                 {songs && songs.map((song, index) =>
-                    (<>
-                    <AlbumCard song={songs[sortingArr[0][index]]} key={index} start={0}/>
-                    <AlbumCard song={songs[sortingArr[1][index]]} key={index + 4} start={4}/>
-                    </>
+                    (<React.Fragment key={song.id || index}>
+                    <AlbumCard song={songs[sortingArr[0][index]]} key={song.id || index} start={0}/>
+                    <AlbumCard song={songs[sortingArr[1][index]]} key={song.id + 4 || index + 4} start={4}/>
+                    </React.Fragment>
                     )
                 )}
             </div>
