@@ -9,25 +9,27 @@ import { FiPlay } from "react-icons/fi";
 let audio1;
 let setIsPlaying1;
 let song1
+let songIdHandler
 
 export const handlePlay = () => {
-  if (audio1.current.played.length > 0) {
-    if (audio1.current.paused) {
-      setIsPlaying1(true);
-      audio1.current.play();
-    } else {
-      setIsPlaying1(false);
-      audio1.current.pause();
-    }
-  } else {
-    setIsPlaying1(true);
-    if(audio1.current && audio1.current.src.length < 1){
-      audio1.current.src = song1.preview;
-      audio1.current.play();
-    }else {
-      audio1.current.play();
-    }
-  }
+  songIdHandler()
+  // if (audio1.current.played.length > 0) {
+  //   if (audio1.current.paused) {
+  //     setIsPlaying1(true);
+  //     audio1.current.play();
+  //   } else {
+  //     setIsPlaying1(false);
+  //     audio1.current.pause();
+  //   }
+  // } else {
+  //   setIsPlaying1(true);
+  //   if(audio1.current && audio1.current.src.length < 1){
+  //     audio1.current.src = song1.preview;
+  //     audio1.current.play();
+  //   }else {
+  //     audio1.current.play();
+  //   }
+  // }
 };
 
 const MediaMiddle = ({
@@ -47,7 +49,7 @@ const MediaMiddle = ({
   let el = useRef();
   let songsContext = useContext(SongsContext);
   let songsStored = songsContext[0];
-  let songIdHandler = songsContext[1];
+  songIdHandler = songsContext[1];
 
   const playNext = () => {
     if (prevSongs.length > 30) {

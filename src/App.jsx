@@ -11,6 +11,7 @@ function App() {
   const [reload, setReload] = useState(false);
   const [songId, setSongId] = useState(null);
   const [song, setSong] = useState({});
+  const [defaultSong, setDefaultSong] = useState({});
   const [isPlaying, setIsPlaying] = useState(false)
   const [playMobile, setPlayMobile] = useState(false)
   const currentTime = useRef();
@@ -20,6 +21,8 @@ function App() {
   const audioMobile = useRef();
   const bottomNavbar = useRef()
 
+  console.log(defaultSong)
+
   useEffect(() => {
     if(playMobile) {
       bottomNavbar.current && (bottomNavbar.current.classList.remove("bottomNavbarShort"))
@@ -28,28 +31,48 @@ function App() {
   },[playMobile])
 
   const songIdHandler = (id) => {
-    setSongId(id);
-    setPlayMobile(prev => true)
-    let chosenSong = [
-      ...res.map((songes) => songes.find((song) => song.id === id)),
-    ];
-    let selectedSong = chosenSong.find((s) => s !== undefined);
-    setIsPlaying(prev => true)
-    if (selectedSong) {
-      setSong(selectedSong);
-      audio.current.src = selectedSong.preview;
-      audio.current.play();
-
-      currentTime.current && (currentTime.current.innerText = "00:00");
-      duration.current &&
-        (duration.current.innerText =
-          ("0" + Math.floor(selectedSong.duration / 60)).substr(-2) +
-          ":" +
-          ("0" + Math.floor(selectedSong.duration % 60)).substr(-2));
+    if(id){
+      setSongId(id);
+      setPlayMobile(prev => true)
+      let chosenSong = [
+        ...res.map((songes) => songes.find((song) => song.id === id)),
+      ];
+      let selectedSong = chosenSong.find((s) => s !== undefined);
+      setIsPlaying(prev => true)
+      if (selectedSong) {
+        setSong(selectedSong);
+        audio.current.src = selectedSong.preview;
+        audio.current.play();
+  
+        currentTime.current && (currentTime.current.innerText = "00:00");
+        duration.current &&
+          (duration.current.innerText =
+            ("0" + Math.floor(selectedSong.duration / 60)).substr(-2) +
+            ":" +
+            ("0" + Math.floor(selectedSong.duration % 60)).substr(-2));
+      }
+    }else {
+      if (audio.current.played.length > 0) {
+        if (audio.current.paused) {
+          setIsPlaying(true);
+          audio.current.play();
+        } else {
+          setIsPlaying(false);
+          audio.current.pause();
+        }
+      } else {
+        setIsPlaying(true);
+        if(audio.current && audio.current.src.length < 1){
+          audio.current.src = defaultSong.preview;
+          audio.current.play();
+        }else {
+          audio.current.play();
+        }
+      }
     }
   };
   
-  let responder = (arr) => setRes(arr);
+  let responder = (arr) => {setRes(arr); setDefaultSong(arr[1][5])};
   const reloader = () => setReload((prev) => !prev);
   const playerSetter = () => setIsPlaying((prev) => !prev)
 

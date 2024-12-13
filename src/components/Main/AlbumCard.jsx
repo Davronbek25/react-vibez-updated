@@ -7,14 +7,18 @@ const AlbumCard = ({ song, start }) => {
   let isPlaying = songsContext[3];
   let playerSetter = songsContext[4];
 
-  let songHandler = (id) => {
+  let songHandler = (id, e) => {
     songIdHandler(id);
-    document.querySelector(".circle").innerHTML = "";
-    if (isPlaying) {
-      document.querySelector(".circle").innerHTML = `<div className="twoLine">
-                    <div className="firstL"></div>
-                    <div className="secondL"></div>
+    console.log(e.currentTarget);
+    e.currentTarget.innerHTML = "";
+    if (!isPlaying) {
+      e.currentTarget.innerHTML = `<div class="twoLine">
+                    <div class="firstL"></div>
+                    <div class="secondL"></div>
                   </div>`;
+    } else {
+      e.currentTarget.innerHTML = `<div class="triangle"></div>`;
+      playerSetter()
     }
   };
   return (
@@ -36,7 +40,7 @@ const AlbumCard = ({ song, start }) => {
             <div className="play-icon0 shadow-sm my-auto ms-auto pe-3">
               <div
                 className="circle"
-                onClick={() => songHandler(song[start].id)}
+                onClick={(e) => songHandler(song[start].id, e)}
                 id={song[start].id}
               >
                 <div className="triangle"></div>
