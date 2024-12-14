@@ -1,7 +1,6 @@
 import { useRef, useContext } from "react";
 import { SongsContext } from "../../../context/SongsContextProvider";
 import { average } from "color.js";
-import { handlePlay } from "../../Media/MediaMiddle";
 
 const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
   let songsContext = useContext(SongsContext);
@@ -74,7 +73,7 @@ const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
             src={isPlaying ? "./imgs/pause.png" : "./imgs/play.png"}
             className="ms-auto"
             alt="play"
-            onClick={handlePlay}
+            onClick={() => songIdHandler()}
           />
         </div>
         <div id="progress-bar-mobile">

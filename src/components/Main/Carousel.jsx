@@ -12,6 +12,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 function Carousel({ songs }) {
   let songsContext = useContext(SongsContext);
   let songIdHandler = songsContext[1];
+  let songId = songsContext[2];
+  let isPlaying = songsContext[3];
 
   let carouselSongs = [];
   if (songs && songs.length > 1) {
@@ -46,7 +48,7 @@ function Carousel({ songs }) {
           className="swiper_container"
         >
           {carouselSongs.map((s, i) => (
-            <SwiperSlide key={i} className=''>
+            <SwiperSlide key={i} className="">
               <img
                 src={s.album.cover_big}
                 className="carousel_image glowing-border"
@@ -64,11 +66,14 @@ function Carousel({ songs }) {
                     onClick={() => songIdHandler(s.id)}
                     id={s.id}
                   >
-                    <div className="triangle"></div>
-                    <div className="twoLine d-none">
-                      <div className="firstL"></div>
-                      <div className="secondL"></div>
-                    </div>
+                    {isPlaying && songId == s.id ? (
+                      <div className="twoLine">
+                        <div className="firstL"></div>
+                        <div className="secondL"></div>
+                      </div>
+                    ) : (
+                      <div className="triangle"></div>
+                    )}
                   </div>
                 </div>
               </div>

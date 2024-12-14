@@ -21,8 +21,6 @@ function App() {
   const audioMobile = useRef();
   const bottomNavbar = useRef()
 
-  console.log(defaultSong)
-
   useEffect(() => {
     if(playMobile) {
       bottomNavbar.current && (bottomNavbar.current.classList.remove("bottomNavbarShort"))
@@ -31,14 +29,14 @@ function App() {
   },[playMobile])
 
   const songIdHandler = (id) => {
-    if(id){
+    if(id && songId !== id){
       setSongId(id);
       setPlayMobile(prev => true)
       let chosenSong = [
         ...res.map((songes) => songes.find((song) => song.id === id)),
       ];
       let selectedSong = chosenSong.find((s) => s !== undefined);
-      setIsPlaying(prev => true)
+      setIsPlaying(true)
       if (selectedSong) {
         setSong(selectedSong);
         audio.current.src = selectedSong.preview;
@@ -51,7 +49,7 @@ function App() {
             ":" +
             ("0" + Math.floor(selectedSong.duration % 60)).substr(-2));
       }
-    }else {
+    }else{
       if (audio.current.played.length > 0) {
         if (audio.current.paused) {
           setIsPlaying(true);

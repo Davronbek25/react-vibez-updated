@@ -4,23 +4,8 @@ import { SongsContext } from "../../context/SongsContextProvider";
 const AlbumCard = ({ song, start }) => {
   let songsContext = useContext(SongsContext);
   let songIdHandler = songsContext[1];
+  let songId = songsContext[2];
   let isPlaying = songsContext[3];
-  let playerSetter = songsContext[4];
-
-  let songHandler = (id, e) => {
-    songIdHandler(id);
-    console.log(e.currentTarget);
-    e.currentTarget.innerHTML = "";
-    if (!isPlaying) {
-      e.currentTarget.innerHTML = `<div class="twoLine">
-                    <div class="firstL"></div>
-                    <div class="secondL"></div>
-                  </div>`;
-    } else {
-      e.currentTarget.innerHTML = `<div class="triangle"></div>`;
-      playerSetter()
-    }
-  };
   return (
     <div className="col col-lg-4 col-md-6 col-sm-12">
       <div className="card mb-3" style={{ maxWidth: "540px" }}>
@@ -40,10 +25,17 @@ const AlbumCard = ({ song, start }) => {
             <div className="play-icon0 shadow-sm my-auto ms-auto pe-3">
               <div
                 className="circle"
-                onClick={(e) => songHandler(song[start].id, e)}
+                onClick={() => songIdHandler(song[start].id)}
                 id={song[start].id}
               >
-                <div className="triangle"></div>
+                {isPlaying && songId == song[start].id ? (
+                  <div className="twoLine">
+                    <div className="firstL"></div>
+                    <div className="secondL"></div>
+                  </div>
+                ) : (
+                  <div className="triangle"></div>
+                )}
               </div>
             </div>
           </div>

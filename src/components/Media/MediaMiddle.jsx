@@ -11,27 +11,6 @@ let setIsPlaying1;
 let song1
 let songIdHandler
 
-export const handlePlay = () => {
-  songIdHandler()
-  // if (audio1.current.played.length > 0) {
-  //   if (audio1.current.paused) {
-  //     setIsPlaying1(true);
-  //     audio1.current.play();
-  //   } else {
-  //     setIsPlaying1(false);
-  //     audio1.current.pause();
-  //   }
-  // } else {
-  //   setIsPlaying1(true);
-  //   if(audio1.current && audio1.current.src.length < 1){
-  //     audio1.current.src = song1.preview;
-  //     audio1.current.play();
-  //   }else {
-  //     audio1.current.play();
-  //   }
-  // }
-};
-
 const MediaMiddle = ({
   audio,
   song,
@@ -118,7 +97,7 @@ const MediaMiddle = ({
       <div className="col middle-media-btm d-flex">
         <div className="d-flex align-items-center justify-content-center ps-5 ms-5 ms-md-3">
           <RxTrackPrevious onClick={playPrev} />
-          <div id="playIcon-container" onClick={handlePlay}>
+          <div id="playIcon-container" onClick={() => songIdHandler()}>
             {isPlaying ? <FiPause id="fi_pause" /> : <FiPlay />}
           </div>
           <RxTrackNext onClick={playNext} />
