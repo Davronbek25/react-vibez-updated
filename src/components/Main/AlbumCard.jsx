@@ -22,11 +22,10 @@ const AlbumCard = ({ song, start }) => {
               {song[start].title.substring(0, 20)}
             </p>
 
-            <div className="play-icon0 shadow-sm my-auto ms-auto pe-3">
+            <div className="play-icon0 shadow-sm my-auto ms-auto pe-3" id={song[start].id}>
               <div
                 className="circle"
                 onClick={() => songIdHandler(song[start].id)}
-                id={song[start].id}
               >
                 {isPlaying && songId == song[start].id ? (
                   <div className="twoLine">

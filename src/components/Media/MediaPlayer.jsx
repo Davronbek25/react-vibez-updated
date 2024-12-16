@@ -11,39 +11,36 @@ const MediaPlayer = ({
   audioMobile,
   pBMobile,
   isPlaying,
-  playerSetter
 }) => {
   let songsContext = useContext(SongsContext);
   let songs = songsContext[0];
   let songId = songsContext[2];
-  let chosenSongs;
+  let chosenSong;
   if (songId) {
     if (songs.length > 1) {
       songs.forEach((song) => {
         const foundSong = song.find((s) => s.id === songId);
         if (foundSong) {
-          chosenSongs = foundSong;
+          chosenSong = foundSong;
         }
       });
     }
   } else {
-    chosenSongs = songs.length > 1 ? songs[1][5] : "";
-    // audio.current && (audio.current.src = chosenSongs.preview);
+    chosenSong = songs.length > 1 ? songs[1][5] : "";
   }
   return (
     <div className="play-media">
       <div className="container-fluid">
         <div className="row d-flex flex-nowrap justify-content-between">
-          <MediaLeft chosenSongs={chosenSongs} />
+          <MediaLeft chosenSong={chosenSong} />
           <MediaMiddle
             audio={audio}
-            song={chosenSongs}
+            song={chosenSong}
             duration={duration}
             currentTime={currentTime}
             audioMobile={audioMobile}
             pBMobile={pBMobile}
             isPlaying={isPlaying}
-            playerSetter={playerSetter}
           />
           <MediaRight audio={audio} />
         </div>

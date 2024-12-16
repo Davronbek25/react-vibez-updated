@@ -16,11 +16,10 @@ const PortraitCard = ({ song, start }) => {
           <h2>{song[start].artist.name}</h2>
           <p className="overflow-hidden">{song[start].title_short}</p>
         </div>
-        <div className="play-icon">
+        <div className="play-icon" id={song[start].id}>
           <div
             className="circle"
             onClick={() => songIdHandler(song[start].id)}
-            id={song[start].id}
           >
             {isPlaying && songId == song[start].id ? (
               <div className="twoLine">

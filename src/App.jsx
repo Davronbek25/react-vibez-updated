@@ -41,6 +41,8 @@ function App() {
         setSong(selectedSong);
         audio.current.src = selectedSong.preview;
         audio.current.play();
+        songId && document.getElementById(songId).classList.remove("opacity1");
+        document.getElementById(id).classList.add("opacity1");
   
         currentTime.current && (currentTime.current.innerText = "00:00");
         duration.current &&
@@ -54,9 +56,11 @@ function App() {
         if (audio.current.paused) {
           setIsPlaying(true);
           audio.current.play();
+          document.getElementById(songId).classList.add("opacity1");
         } else {
           setIsPlaying(false);
           audio.current.pause();
+          document.getElementById(songId).classList.remove("opacity1");
         }
       } else {
         setIsPlaying(true);
@@ -72,7 +76,6 @@ function App() {
   
   let responder = (arr) => {setRes(arr); setDefaultSong(arr[1][5])};
   const reloader = () => setReload((prev) => !prev);
-  const playerSetter = () => setIsPlaying((prev) => !prev)
 
   useFetch(reloader, responder, reload);
   return (
@@ -81,7 +84,6 @@ function App() {
       songIdHandler={songIdHandler}
       songId={songId}
       isPlaying={isPlaying}
-      playerSetter={playerSetter}
     >
       <div className="container-fluid main-container g-0 d-flex">
         <Mobile
@@ -100,7 +102,6 @@ function App() {
           audioMobile={audioMobile}
           pBMobile={pBMobile}
           isPlaying={isPlaying}
-          playerSetter={playerSetter}
         />
       </div>
     </SongsContextProvider>

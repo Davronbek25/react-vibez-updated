@@ -25,7 +25,6 @@ export default function SwiperSlides({ songs, start }) {
                   src={songs[sortingArr[i][j]][start[i]].album.cover_big}
                   className="card-img-top rounded"
                   onClick={() => songIdHandler(songs[sortingArr[i][j]][start[i]].id)} 
-                  id={songs[sortingArr[i][j]][start[i]].id}
                   alt="..."
                 />
                 <div className="card-body p-0">

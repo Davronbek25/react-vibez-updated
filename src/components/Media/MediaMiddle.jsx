@@ -18,11 +18,9 @@ const MediaMiddle = ({
   currentTime,
   pBMobile,
   isPlaying,
-  playerSetter,
 }) => {
   const [prevSongs, setPrevSongs] = useState([]);
   audio1 = audio;
-  setIsPlaying1 = playerSetter;
   song1 = song;
 
   let el = useRef();
