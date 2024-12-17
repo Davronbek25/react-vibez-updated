@@ -48,10 +48,6 @@
     transition: all 0.4s;
 }
 
-.opacity1 {
-    opacity: 1;
-}
-
 .custom-card:hover .play-icon {
     opacity: 1;
     transform: translateY(0);
@@ -110,6 +106,10 @@
 .list-cards > .row > .col > .card:hover .play-icon0 {
     opacity: 1;
     transform: translateY(0);
+}
+
+.opacity1 {
+    opacity: 1;
 }
 
 .list-cards > .row > .col > .card:hover {

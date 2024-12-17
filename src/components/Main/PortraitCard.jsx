@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { SongsContext } from "../../context/SongsContextProvider";
+import uniqid from "uniqid";
 
 const PortraitCard = ({ song, start }) => {
   let songsContext = useContext(SongsContext);
   let songIdHandler = songsContext[1];
   let songId = songsContext[2];
   let isPlaying = songsContext[3];
+  let idSong = uniqid();
   return (
     <div className="col-lg-2 col-md-4 col-sm-6 mb-4 mb-lg-0">
       <div className="custom-card">
@@ -16,10 +18,10 @@ const PortraitCard = ({ song, start }) => {
           <h2>{song[start].artist.name}</h2>
           <p className="overflow-hidden">{song[start].title_short}</p>
         </div>
-        <div className="play-icon" id={song[start].id}>
+        <div className="play-icon" id={idSong}>
           <div
             className="circle"
-            onClick={() => songIdHandler(song[start].id)}
+            onClick={() => songIdHandler(song[start].id, idSong)}
           >
             {isPlaying && songId == song[start].id ? (
               <div className="twoLine">

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SongsContext } from "../../context/SongsContextProvider";
 import { Swiper, SwiperSlide } from "swiper/react";
+import uniqid from "uniqid";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -47,7 +48,9 @@ function Carousel({ songs }) {
           modules={[EffectCoverflow, Pagination, Navigation]}
           className="swiper_container"
         >
-          {carouselSongs.map((s, i) => (
+          {carouselSongs.map((s, i) => {
+            let idSong = uniqid();
+            return(
             <SwiperSlide key={i} className="">
               <img
                 src={s.album.cover_big}
@@ -60,11 +63,10 @@ function Carousel({ songs }) {
                   <h3>{s.artist.name}</h3>
                   <p className="overflow-hidden">{s.title_short}</p>
                 </div>
-                <div className="play-icon">
+                <div className="play-icon" id={idSong}>
                   <div
                     className="circle"
-                    onClick={() => songIdHandler(s.id)}
-                    id={s.id}
+                    onClick={() => songIdHandler(s.id, idSong)}
                   >
                     {isPlaying && songId == s.id ? (
                       <div className="twoLine">
@@ -78,7 +80,7 @@ function Carousel({ songs }) {
                 </div>
               </div>
             </SwiperSlide>
-          ))}
+          )})}
 
           <div className="slider-controler"></div>
         </Swiper>

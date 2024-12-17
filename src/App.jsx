@@ -28,7 +28,7 @@ function App() {
     }
   },[playMobile])
 
-  const songIdHandler = (id) => {
+  const songIdHandler = (id, idSong) => {
     if(id && songId !== id){
       setSongId(id);
       setPlayMobile(prev => true)
@@ -41,8 +41,8 @@ function App() {
         setSong(selectedSong);
         audio.current.src = selectedSong.preview;
         audio.current.play();
-        songId && document.getElementById(songId).classList.remove("opacity1");
-        document.getElementById(id).classList.add("opacity1");
+        document.getElementsByClassName("opacity1")[0] && document.getElementsByClassName("opacity1")[0].classList.remove("opacity1");
+        idSong && document.getElementById(idSong).classList.add("opacity1");
   
         currentTime.current && (currentTime.current.innerText = "00:00");
         duration.current &&
@@ -56,11 +56,11 @@ function App() {
         if (audio.current.paused) {
           setIsPlaying(true);
           audio.current.play();
-          document.getElementById(songId).classList.add("opacity1");
+          idSong && document.getElementById(idSong).classList.add("opacity1");
         } else {
           setIsPlaying(false);
           audio.current.pause();
-          document.getElementById(songId).classList.remove("opacity1");
+          idSong && document.getElementById(idSong).classList.remove("opacity1");
         }
       } else {
         setIsPlaying(true);
