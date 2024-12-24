@@ -8,18 +8,18 @@ const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
 
   let songs = songsContext[0];
   let songId = songsContext[2];
-  let chosenSongs;
+  let chosenSong;
   if (songId) {
     if (songs.length > 1) {
       songs.forEach((song) => {
         const foundSong = song.find((s) => s.id === songId);
         if (foundSong) {
-          chosenSongs = foundSong;
+          chosenSong = foundSong;
         }
       });
     }
   } else {
-    chosenSongs = songs.length > 1 ? songs[1][5] : "";
+    chosenSong = songs.length > 1 ? songs[1][5] : "";
   }
   let songIdHandler = songsContext[1];
   // Heart Button
@@ -36,8 +36,8 @@ const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
   // 
 
   // Song photo matching background
-  chosenSongs &&
-    average(chosenSongs.album.cover_big, { format: "hex" }).then((color) => {
+  chosenSong &&
+    average(chosenSong.album.cover_big, { format: "hex" }).then((color) => {
       if (bottomPlayerRow.current) {
         bottomPlayerRow.current.style.backgroundImage = `linear-gradient(to bottom right, ${color}, rgb(55 46 46))`;
       }
@@ -51,15 +51,15 @@ const BottomPlayer = ({ audioMobile, pBMobile, isPlaying }) => {
       >
         <div className="col-9 d-flex p-0 position-relative">
           <img
-            src={chosenSongs && chosenSongs.album.cover_big}
+            src={chosenSong && chosenSong.album.cover_big}
             width=""
             className=""
             alt=""
-            onClick={() => songIdHandler(chosenSongs && chosenSongs.id)}
+            onClick={() => songIdHandler(chosenSong && chosenSong.id)}
           />
           <span className="bottom-player-text">
-            <h6 className="mb-0 text-truncate">{chosenSongs && chosenSongs.artist.name}</h6>
-            <p className="mb-0 text-truncate w-75">{chosenSongs && chosenSongs.title_short}</p>
+            <h6 className="mb-0 text-truncate">{chosenSong && chosenSong.artist.name}</h6>
+            <p className="mb-0 text-truncate w-75">{chosenSong && chosenSong.title_short}</p>
           </span>
         </div>
         <div className="col-3 d-flex align-items-center bottom-player-right">

@@ -162,6 +162,11 @@ html {
     cursor: pointer;
 }
 
+.link-no-style {
+    text-decoration: none;
+    color: inherit
+}
+
 .triple-icons:hover {
     border-radius: 12px;
     background-color: #313237;

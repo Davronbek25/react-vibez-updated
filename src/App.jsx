@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import SideBar from "./components/SideBar/SideBar";
 import Main from "./components/Main/Main";
 import MediaPlayer from "./components/Media/MediaPlayer";
@@ -94,7 +95,9 @@ function App() {
           isPlaying={isPlaying}
         />
         <SideBar />
-        <Main />
+        <Routes>
+          <Route path="/" element={<Main/>} />
+        </Routes>
         <MediaPlayer
           audio={audio}
           duration={duration}

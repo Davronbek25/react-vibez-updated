@@ -6,11 +6,6 @@ import { RxTrackNext } from "react-icons/rx";
 import { FiPause } from "react-icons/fi";
 import { FiPlay } from "react-icons/fi";
 
-let audio1;
-let setIsPlaying1;
-let song1
-let songIdHandler
-
 const MediaMiddle = ({
   audio,
   song,
@@ -20,13 +15,11 @@ const MediaMiddle = ({
   isPlaying,
 }) => {
   const [prevSongs, setPrevSongs] = useState([]);
-  audio1 = audio;
-  song1 = song;
 
   let el = useRef();
   let songsContext = useContext(SongsContext);
   let songsStored = songsContext[0];
-  songIdHandler = songsContext[1];
+  let songIdHandler = songsContext[1];
 
   const playNext = () => {
     if (prevSongs.length > 30) {
@@ -63,7 +56,6 @@ const MediaMiddle = ({
     if (ended) {
       el.current.style.width = "0%";
       pBMobile.current.style.width = "0%";
-      setIsPlaying1();
     } else {
       el.current.style.width = percentage.toString() + "%";
       pBMobile.current && (pBMobile.current.style.width = percentage.toString() + "%");
