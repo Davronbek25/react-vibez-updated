@@ -12,7 +12,7 @@ const SideBarSections = () => {
       value={{ color: "white", className: "sideBar-icons" }}
     >
       <div className="col" id="side-bar-icons">
-        <Link to="/">
+        <Link className="link-no-style" to="/">
           <img src="./imgs/logo-music.png" style={{ height: "2.5em" }} />
           <span id="logo-text">Vibez</span>
         </Link>

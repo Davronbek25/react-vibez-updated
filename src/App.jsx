@@ -6,6 +6,7 @@ import MediaPlayer from "./components/Media/MediaPlayer";
 import useFetch from "./customHooks/useFetch";
 import SongsContextProvider from "./context/SongsContextProvider";
 import Mobile from "./components/Mobile/Mobile";
+import SearchResults from "./components/DifferentSections/SearchResults";
 
 function App() {
   const [res, setRes] = useState([]);
@@ -97,6 +98,7 @@ function App() {
         <SideBar />
         <Routes>
           <Route path="/" element={<Main/>} />
+          <Route path="/search-results" element={<SearchResults/>} />
         </Routes>
         <MediaPlayer
           audio={audio}

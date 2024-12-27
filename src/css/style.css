@@ -173,14 +173,14 @@ html {
     transition: all ease-in-out 0.15s;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div>span,
-.side-bar-nav>div:first-of-type>span {
+#side-bar-icons>div:first-of-type>.col:first-child>a>div>span,
+.side-bar-nav>a>div:first-of-type>span {
     font-size: 14px;
     font-weight: 600;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div:nth-of-type(4),
-#side-bar-icons>div:first-of-type>.col:first-child>div:nth-of-type(5) {
+#side-bar-icons>div:first-of-type>.col:first-child>a>div:nth-of-type(4),
+#side-bar-icons>div:first-of-type>.col:first-child>a>div:nth-of-type(5) {
     opacity: 0.7;
 }
 
@@ -188,8 +188,8 @@ html {
     opacity: 0.7;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div:nth-of-type(4):hover,
-#side-bar-icons>div:first-of-type>.col:first-child>div:nth-of-type(5):hover,
+#side-bar-icons>div:first-of-type>.col:first-child>a>div:nth-of-type(4):hover,
+#side-bar-icons>div:first-of-type>.col:first-child>a>div:nth-of-type(5):hover,
 .side-bar-nav>div:first-of-type:hover {
     opacity: 1;
     transition: opacity ease-in-out 0.15s;
@@ -199,16 +199,16 @@ html {
     cursor: pointer;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div {
+#side-bar-icons>div:first-of-type>.col:first-child>a>div {
     padding-top: 12px;
     padding-bottom: 12px;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div:nth-of-type(4) {
+#side-bar-icons>div:first-of-type>.col:first-child>a:nth-of-type(4)>div {
     margin-top: 2.7em;
 }
 
-#side-bar-icons>div:first-of-type>.col:first-child>div:hover {
+#side-bar-icons>div:first-of-type>.col:first-child>a>div:hover {
     cursor: pointer;
 }
 
