@@ -314,7 +314,7 @@ html {
     width: 19em;
 }
 
-.list-cards>.row>.col>.card>.row>.col>p {
+.list-cards>.row>.col>.card>.row>.col>.card-text>p:first-child {
     padding-left: 0.85em;
     font-family: "GothamMedium";
     height: 3rem;

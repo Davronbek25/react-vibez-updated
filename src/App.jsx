@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import SideBar from "./components/SideBar/SideBar";
 import Main from "./components/Main/Main";
 import MediaPlayer from "./components/Media/MediaPlayer";
 import useFetch from "./customHooks/useFetch";
 import SongsContextProvider from "./context/SongsContextProvider";
 import Mobile from "./components/Mobile/Mobile";
-import SearchResults from "./components/DifferentSections/SearchResults";
 
 function App() {
   const [res, setRes] = useState([]);
@@ -96,10 +94,7 @@ function App() {
           isPlaying={isPlaying}
         />
         <SideBar />
-        <Routes>
-          <Route path="/" element={<Main/>} />
-          <Route path="/search-results" element={<SearchResults/>} />
-        </Routes>
+        <Main/>
         <MediaPlayer
           audio={audio}
           duration={duration}

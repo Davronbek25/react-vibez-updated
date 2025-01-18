@@ -2,10 +2,9 @@ import React, { useContext, useRef } from "react";
 import { SongsContext } from "../../context/SongsContextProvider";
 import AlbumCard from "./AlbumCard";
 import PortraitCard from "./PortraitCard";
-import Footer from "../Footer/Footer";
 import Carousel from "./Carousel";
 
-const MainContent = () => {
+const Home = () => {
   let songsContext = useContext(SongsContext);
   let songs = songsContext[0];
   let time = new Date();
@@ -61,7 +60,7 @@ const MainContent = () => {
     }
   };
   return (
-    <div className="container-fluid g-0 mb-md-4" id="content-container">
+    <>
       <Carousel songs={songs} />
       <h2 ref={greeting} className="mt-3" id="greeting">
         Good afternoon
@@ -96,9 +95,8 @@ const MainContent = () => {
             ))}
         </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
-export default MainContent;
+export default Home;

@@ -20,9 +20,14 @@ const AlbumCard = ({ song, start }) => {
             />
           </div>
           <div className="col d-flex position-relative">
-            <p className="card-text align-self-center ps-3 text-white m-0 w-75">
-              {song[start].title.substring(0, 20)}
-            </p>
+          <div className="card-text ps-3 w-75">
+              <p className="ps-3 text-white m-0">
+                {song[start].title.substring(0, 20)}
+              </p>
+              <p className="ps-3 text-white m-0">
+                {song[start].artist.name.substring(0, 20)}
+              </p>
+            </div>
 
             <div className="play-icon0 shadow-sm my-auto ms-auto pe-3" id={idSong}>
               <div
