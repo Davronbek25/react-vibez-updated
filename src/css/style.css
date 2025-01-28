@@ -315,9 +315,8 @@ html {
 }
 
 .list-cards>.row>.col>.card>.row>.col>.card-text>p:first-child {
-    padding-left: 0.85em;
     font-family: "GothamMedium";
-    height: 3rem;
+    max-height: 3rem;
     overflow: hidden;
 }
 
@@ -552,7 +551,7 @@ footer>.row>.col-sm-6>ul>li>a:hover {
 .footer-socials>li {
     padding: 5px 12px 9px 12px;
     border-radius: 50%;
-    background-color: #282828;
+    background-color: #1E212A;
 }
 
 .footer-socials>li:hover {

@@ -23,7 +23,7 @@ const AlbumCard = ({ song, start, songCard }) => {
             />
           </div>
           <div className="col d-flex position-relative">
-          <div className="card-text ps-3 w-75">
+          <div className="card-text d-flex flex-column justify-content-center ps-3 w-75">
               <p className="ps-3 text-white m-0">
                 {cardSong.title.substring(0, 20)}
               </p>
