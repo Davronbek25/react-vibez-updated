@@ -90,10 +90,10 @@ function App() {
           audioMobile={audioMobile}
           pBMobile={pBMobile}
           bottomNavbar={bottomNavbar}
-          playMobile={playMobile}
+          playMobile={playMobile} 
           isPlaying={isPlaying}
         />
-        <SideBar />
+        <SideBar/>
         <Main/>
         <MediaPlayer
           audio={audio}

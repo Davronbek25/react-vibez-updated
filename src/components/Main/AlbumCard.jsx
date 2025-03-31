@@ -10,7 +10,6 @@ const AlbumCard = ({ song, start, songCard }) => {
   let idSong = uniqid();
   let cardSong = songCard? songCard : song[start]
   let colSpecs = songCard? 'col' : "col col-lg-4 col-md-6 col-sm-12"
-  console.log(cardSong, 'cardsong')
   return (
     <div className={colSpecs}>
       <div className="card mb-3 m-auto" style={{ maxWidth: cardSong? "740px" : "540px" }}>

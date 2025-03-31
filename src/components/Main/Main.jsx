@@ -5,6 +5,8 @@ import Home from './Home'
 import NavBar from '../Navbar/NavBar'
 import SearchResults from '../DifferentSections/SearchResults';
 import Footer from '../Footer/Footer'
+import Categories from '../DifferentSections/Categories';
+import Artists from '../DifferentSections/Artists';
 
 const Main = () => {
   return (
@@ -14,6 +16,8 @@ const Main = () => {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/search-results" element={<SearchResults/>} />
+            <Route path='/categories' element={<Categories />}/>
+            <Route path='/artists' element={<Artists />}/>
           </Routes>
           <Footer />
         </div>

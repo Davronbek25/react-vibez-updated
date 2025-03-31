@@ -1,11 +1,9 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
 import AlbumCard from '../Main/AlbumCard'
 
 const SearchResults = () => {
   const location = useLocation()
   const { results } = location.state || {results: [] }
-  console.log(results)
 
   return (
     <div id='searchResults' className='container list-cards pt-3'>
